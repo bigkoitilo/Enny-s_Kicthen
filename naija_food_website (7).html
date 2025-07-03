@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENNY'S KITCHEN - Authentic Nigerian Cuisine</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://i.imgur.com/NmXGQaA.jpg') center/cover no-repeat;
+      padding: 5em 2em;
+      text-align: center;
+      color: white;
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero h2 {
+      font-size: 2.5em;
+    }
+    section {
+      padding: 2em;
+      text-align: center;
+    }
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+    }
+    .item {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1em;
+      width: 220px;
+      border-radius: 8px;
+    }
+    .item h3 {
+      margin-top: 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+      gap: 1em;
+    }
+    input, textarea, button {
+      background-color: #0a3d62;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button {
+      background-color: #0a3d62;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    .order-form {
+      max-width: 500px;
+      margin: auto;
+      padding-top: 1em;
+    }
+    .payment-note {
+      margin-top: 1em;
+      font-size: 0.95em;
+      color: #444;
+    }
+    .payment-note strong {
+      color: #0a3d62;
+    }
+    .social-links {
+      margin-top: 2em;
+    }
+    .social-links a {
+      margin: 0 1em;
+      color: #0a3d62;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .schedule {
+      margin-top: 2em;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .testimonial {
+      max-width: 800px;
+      margin: 2em auto;
+      background: #f5f5f5;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .testimonial blockquote {
+      font-style: italic;
+      margin: 0;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 2em auto;
+      text-align: left;
+    }
+    .faq h3 {
+      color: #0a3d62;
+    }
+    .faq p {
+      margin-bottom: 1em;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+  </style>
+  <script>
+    function sendWhatsAppOrder(event) {
+      event.preventDefault();
+      const name = document.querySelector('#order-form-name').value;
+      const phone = document.querySelector('#order-form-phone').value;
+      const address = document.querySelector('#order-form-address').value;
+      const order = document.querySelector('#order-form-details').value;
+      const message = `Order from ${name}%0APhone: ${phone}%0AAddress: ${address}%0AOrder: ${order}`;
+      const whatsappURL = `https://wa.me/+2349125005956?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <header> 
+    <h1>Enny's Naija Kitchen</h1>
+    <p style="font-size: 1.2em; margin: 0.1em 0; font-weight: bold; font-family: 'Georgia', serif; letter-spacing: 0.5px; color: white;">Best homemade dishes available</p>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="item"><h3>Jollof Rice</h3><p>₦2,800</p></div>
+      <div class="item"><h3>Fried Rice</h3><p>₦3,500</p></div>
+      <div class="item"><h3>Okro / Efo Riro / Egusi Soup</h3><p>₦3,500</p></div>
+      <div class="item"><h3>Pounded Yam & Egusi</h3><p>₦3,500</p></div>
+      <div class="item"><h3>Ofada Rice & Sauce</h3><p>₦3,000</p></div>
+      <div class="item"><h3>Spaghetti</h3><p>₦2,500</p></div>
+      <div class="item"><h3>Semo / Eba / Amala</h3><p>₦2,500</p></div>
+      <div class="item"><h3>Porridge</h3><p>₦3,000</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Enny's Naija Kitchen, we bring you authentic, homemade Nigerian dishes crafted with love and premium ingredients. Our goal is to make every bite remind you of home.</p>
+    <div class="social-links">
+      <a href="https://wa.me/2349125005956" target="_blank">View WhatsApp Status</a>
+    </div>
+    <div class="schedule">
+      <h3>Delivery Schedule</h3>
+      <p><strong>Friday:</strong> 9:00 AM – 6:00 PM</p>
+      <p><strong>Saturday:</strong> 9:00 AM – 6:00 PM</p>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2>Order Online</h2>
+    <form class="order-form" onsubmit="sendWhatsAppOrder(event)">
+      <input type="text" id="order-form-name" placeholder="Your Name" required />
+      <input type="tel" id="order-form-phone" placeholder="Phone Number" required />
+      <input type="text" id="order-form-address" placeholder="Address" required />
+      <textarea id="order-form-details" placeholder="Order Details (e.g., 2 Jollof, 1 Egusi)" rows="4" required></textarea>
+      <button type="submit">Place Order via WhatsApp</button>
+    </form>
+    
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="text" placeholder="Address" required />
+      <textarea placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <blockquote>“The Egusi soup was absolutely delicious! Reminded me of my mum’s cooking.”<br>– Chiamaka, Lagos</blockquote>
+    </div>
+    <div class="testimonial">
+      <blockquote>“Prompt delivery and tasty meals every single time. Highly recommend Enny’s Kitchen!”<br>– David, Ikeja</blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Enny's Naija Kitchen. All rights reserved.</p>
+  </footer>
